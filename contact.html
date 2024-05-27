@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact us</title>
+        <style>
+
+      * { 
+ padding: 0; 
+ margin: 0; 
+
+ }
+  
+  ul { 
+  list-style: none; 
+  background: #439093;
+   text-align: center; 
+   } 
+   ul li {
+    display: inline-block;
+     position: relative;
+      }
+       ul li a { 
+       display: block;
+        padding: 10px 18px; 
+        color: #EBD6D7;
+         text-decoration: none; 
+         text-align: center;
+          font-size: 16px;
+           } 
+           ul li ul.dropdown li {
+            display: block; 
+            background: #439093; 
+            margin: 2px 0px;
+        
+             }
+              ul li ul.dropdown {
+               width:auto;
+                background: #F7F5E8; 
+                position: absolute;
+                 z-index: 999;
+                  display: none;
+                   }
+                    ul li a:hover {
+                     background: #F2F2F2;
+                      } ul li:hover ul.dropdown{
+                       display: block;
+                       
+                        } 
+
+body{
+    font-family:serif;
+    background-color: #F7F5E8;
+    
+}
+
+h3{
+    color:#2A6786
+    padding-top:25px;
+    padding:70px;
+}
+            @media (min-width: 768px) {
+      ul {
+        text-align: right;
+        padding-right: 20px;
+      }
+      ul li a {
+        font-size: 18px;
+      }
+      .container {
+        margin-top: 150px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      ul li a {
+        font-size: 20px;
+      }
+    }      
+      
+
+        </style>
+    </head>
+    <body>
+        <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About Us</a></li>
+     <li>
+       <a href="#">Admisson &#x25BE;</a>
+       <ul class="dropdown">
+        <li><a href="five.html">5 to 10 </a></li>
+        <li><a href="eleven.html">11</a></li>
+        <li><a href="twelve.html">12</a></li>
+       </ul>
+       </li>
+     <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <h3>NO CONTACT ARE AVALABILE</h3>
+    </body>
+</html>

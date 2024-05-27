@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+    <style>
+        
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        padding-top: 25px;
+    }
+
+    label {
+        display: inline-block;
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom:7px;
+    }
+
+    fieldset {
+        margin-bottom: 20px;
+        padding: 29px;
+        border: 1px solid #ccc;
+    }
+
+    button:hover {
+        background-color:  #0056b3;
+    }
+
+    .receipt {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px dashed black;
+        border-radius: 10px;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      * { 
+ padding: 0; 
+ margin: 0; 
+
+ }
+  
+  ul { 
+  list-style: none; 
+  background: #439093;
+   text-align: center; 
+   } 
+   ul li {
+    display: inline-block;
+     position: relative;
+      }
+       ul li a { 
+       display: block;
+        padding: 10px 18px; 
+        color: #EBD6D7;
+         text-decoration: none; 
+         text-align: center;
+          font-size: 16px;
+           } 
+           ul li ul.dropdown li {
+            display: block; 
+            background: #439093; 
+            margin: 2px 0px;
+        
+             }
+              ul li ul.dropdown {
+               width:auto;
+                background: #F7F5E8; 
+                position: absolute;
+                 z-index: 999;
+                  display: none;
+                   }
+                    ul li a:hover {
+                     background: #F2F2F2;
+                      } ul li:hover ul.dropdown{
+                       display: block;
+                       
+                        } 
+
+body{
+    font-family:serif;
+    background-color: #F7F5E8;
+    color: #2A6786;
+}
+
+
+
+
+
+
+
+
+
+      @media (min-width: 768px) {
+      ul {
+        text-align: right;
+        padding-right: 20px;
+      }
+      ul li a {
+        font-size: 18px;
+      }
+      .container {
+        margin-top: 150px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      ul li a {
+        font-size: 20px;
+      }
+    }      
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+        
+    </style>
+</head>
+<body>
+    <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About Us</a></li>
+     <li>
+       <a href="#">Admisson &#x25BE;</a>
+       <ul class="dropdown">
+        <li><a href="five.html">5 to 10</a></li>
+        <li><a href="eleven.html">11</a></li>
+        <li><a href="twelve.html">12</a></li>
+       </ul>
+       </li>
+     <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  
+    <form id="admissionForm" onsubmit="generateReceipt(event)">
+        <section>
+            <fieldset>
+            <legend>BASIC DETAILS</legend>
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <label for="fatherName">Father Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="motherName">Mother Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="relationshipGuardian">Relationship in Guardian:</label>
+            <input type="text" id="relationshipGuardian" name="relationshipGuardian" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" onchange="toggleKanyashreeId()" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+
+            <div id="kanyashreeIdField" style="display:none;">
+                <label for="kanyashreeId">Kanyashree ID:</label>
+                <input type="text" id="kanyashreeId" name="kanyashreeId">
+            </div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" onchange="calculateAge()" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" readonly>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="postOffice">Post Office:</label>
+            <input type="text" id="postOffice" name="postOffice" required>
+
+            <label for="policeStation">Police Station:</label>
+            <input type="text" id="policeStation" name="policeStation" required>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="pinCode">Pin Code:</label>
+            <input type="text" id="pinCode" name="pinCode" required>
+
+            <label for="cast">Cast:</label>
+            <select id="cast" name="cast" onchange="toggleCastNumber()" required>
+                <option value="">Select</option>
+                <option value="gen">Gen</option>
+                <option value="sc">SC</option>
+                <option value="st">ST</option>
+                <option value="obc">OBC</option>
+            </select>
+
+            <div id="castNumberField" style="display:none;">
+                <label for="castNumber">Cast Number:</label>
+                <input type="text" id="castNumber" name="castNumber">
+            </div>
+
+            <label for="religion">Religion:</label>
+            <input type="text" id="religion" name="religion" required>
+
+            <label for="incomeStatus">Income Status:</label>
+            <select id="incomeStatus" name="incomeStatus" onchange="toggleBplNumber()" required>
+                <option value="">Select</option>
+                <option value="apl">APL</option>
+                <option value="bpl">BPL</option>
+            </select>
+
+            <div id="bplNumberField" style="display:none;">
+                <label for="bplNumber">BPL Number:</label>
+                <input type="text" id="bplNumber" name="bplNumber">
+            </div>
+
+            <label for="annualIncome">Annual Income:</label>
+            <input type="number" id="annualIncome" name="annualIncome" required>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" required>
+
+            <label for="whatsappNumber">WhatsApp Number:</label>
+            <input type="text" id="whatsappNumber" name="whatsappNumber">
+
+            <label for="emailId">Email ID:</label>
+            <input type="email" id="emailId" name="emailId">
+
+            <label for="aadharCardNumber">Aadhar Card Number:</label>
+            <input type="text" id="aadharCardNumber" name="aadharCardNumber" required>
+
+            <label for="lastSchool">Last School:</label>
+            <input type="text" id="lastSchool" name="lastSchool" required>
+            </fieldset>
+        </section>
+
+        <section>
+            <fieldset>
+            <legend>BANKING DETAILS</legend>
+            <label for="bankAccountNumber">Bank Account Number:</label>
+            <input type="text" id="bankAccountNumber" name="bankAccountNumber" required>
+
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" name="bankName" required>
+
+            <label for="branchName">Branch Name:</label>
+            <input type="text" id="branchName" name="branchName" required>
+
+            <label for="ifscCode">IFSC Code:</label>
+            <input type="text" id="ifscCode" name="ifscCode" required>
+            </fieldset>
+        </section>
+
+        <section>
+            <fieldset>     
+            <legend>ADMISSON RELATED INFORMATION</legend>       <label for="section">Section:</label>
+            <select id="section" name="section" onchange="toggleClassSubjects()" required>
+                <option value="none">None</option>
+                <option value="12science">12 Science</option>
+                <option value="12bioscience">12 Bio Science</option>
+                <option value="12arts">12 Arts</option>
+            </select>
+
+            <div id="classSubjectsField" style="display:none;">
+                <label for="classSubjects">Enter Your 11 Class Selected Subjects:</label>
+                <textarea id="classSubjects" name="classSubjects"></textarea>
+            </div>
+
+            <label for="previousExam">Previous Exam Name:</label>
+            <input type="text" id="previousExam" name="previousExam" required>
+
+            <label for="totalMarks">Total Marks:</label>
+            <input type="number" id="totalMarks" name="totalMarks" required>
+
+            <label for="passingYear">Passing Year:</label>
+            <input type="text" id="passingYear" name="passingYear" required>
+            </fieldset>
+            
+        </section>
+
+        <button type="submit">Submit</button>
+           <button type="reset">reset</button>
+        
+    </form>
+
+    <div id="receipt" class="receipt" style="display:none;">
+        <h2>sagarbarh bs vidya bhawan</h2>
+        <p><strong>Registration Number:</strong> <span id="regNumber"></span></p>
+        <p><strong>Name of Student:</strong> <span id="receiptStudentName"></span></p>
+        <p><strong>Class:</strong> <span id="receiptClass"></span></p>
+        <p><strong>Selected Subjects:</strong> <span id="receiptSubjects"></span></p>
+        <p><strong>Father Name:</strong> <span id="receiptFatherName"></span></p>
+        <p><strong>Current Date:</strong> <span id="currentDate"></span></p>
+        <p><strong>Mobile Number:</strong> <span id="receiptMobileNumber"></span></p>
+        
+    </div>
+
+    <script>
+        
+        function toggleKanyashreeId() {
+    const gender = document.getElementById('gender').value;
+    const kanyashreeIdField = document.getElementById('kanyashreeIdField');
+    if (gender === 'female') {
+        kanyashreeIdField.style.display = 'block';
+    } else {
+        kanyashreeIdField.style.display = 'none';
+    }
+}
+
+function calculateAge() {
+    const dob = new Date(document.getElementById('dob').value);
+    const ageField = document.getElementById('age');
+    const diff = Date.now() - dob.getTime();
+    const age = new Date(diff).getUTCFullYear() - 1970;
+    ageField.value = age;
+}
+
+function toggleCastNumber() {
+    const cast = document.getElementById('cast').value;
+    const castNumberField = document.getElementById('castNumberField');
+    if (cast === 'sc' || cast === 'st' || cast === 'obc') {
+        castNumberField.style.display = 'block';
+    } else {
+        castNumberField.style.display = 'none';
+    }
+}
+
+function toggleBplNumber() {
+    const incomeStatus = document.getElementById('incomeStatus').value;
+    const bplNumberField = document.getElementById('bplNumberField');
+    if (incomeStatus === 'bpl') {
+        bplNumberField.style.display = 'block';
+    } else {
+        bplNumberField.style.display = 'none';
+    }
+}
+
+function toggleClassSubjects() {
+    const section = document.getElementById('section').value;
+    const classSubjectsField = document.getElementById('classSubjectsField');
+    if (section === '12science' || section === '12bioscience' || section === '12arts') {
+        classSubjectsField.style.display = 'block';
+    } else {
+        classSubjectsField.style.display = 'none';
+    }
+}
+
+function generateReceipt(event) {
+    event.preventDefault();
+
+    const regNumber = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('regNumber').innerText = regNumber;
+    document.getElementById('receiptStudentName').innerText = document.getElementById('studentName').value;
+    document.getElementById('receiptClass').innerText = document.getElementById('section').value === 'none' ? 'None' : document.getElementById('section').value;
+    document.getElementById('receiptSubjects').innerText = document.getElementById('classSubjects').value || 'None';
+    document.getElementById('receiptFatherName').innerText = document.getElementById('fatherName').value;
+    document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+    document.getElementById('receiptMobileNumber').innerText = document.getElementById('mobileNumber').value;
+
+    document.getElementById('admissionForm').style.display = 'none';
+    document.getElementById('receipt').style.display = 'block';
+}
+
+    </script>
+</body>
+</html>

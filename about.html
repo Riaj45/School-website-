@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About us</title>
+        <style>
+      * { 
+ padding: 0; 
+ margin: 0; 
+
+ }
+  
+  ul { 
+  list-style: none; 
+  background: #439093;
+   text-align: center; 
+   } 
+   ul li {
+    display: inline-block;
+     position: relative;
+      }
+       ul li a { 
+       display: block;
+        padding: 10px 18px; 
+        color: #EBD6D7;
+         text-decoration: none; 
+         text-align: center;
+          font-size: 16px;
+           } 
+           ul li ul.dropdown li {
+            display: block; 
+            background: #439093; 
+            margin: 2px 0px;
+        
+             }
+              ul li ul.dropdown {
+               width:auto;
+                background: #F7F5E8; 
+                position: absolute;
+                 z-index: 999;
+                  display: none;
+                   }
+                    ul li a:hover {
+                     background: #F2F2F2;
+                      } ul li:hover ul.dropdown{
+                       display: block;
+                       
+                        } 
+
+body{
+    font-family:serif;
+    background-color: #F7F5E8;
+}
+
+
+section{
+    margin-top:25px;
+}
+
+      @media (min-width: 768px) {
+      ul {
+        text-align: right;
+        padding-right: 20px;
+      }
+      ul li a {
+        font-size: 18px;
+      }
+      .container {
+        margin-top: 150px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      ul li a {
+        font-size: 20px;
+      }
+    }      
+        </style>
+    </head>
+    <body>
+      <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About Us</a></li>
+     <li>
+       <a href="#">Admisson &#x25BE;</a>
+       <ul class="dropdown">
+        <li><a href="five.html">5 to 10</a></li>
+        <li><a href="eleven.html">11</a></li>
+        <li><a href="twelve.html">12</a></li>
+       </ul>
+       </li>
+     <li><a href="contact.html">Contact Us</a></li>
+  </ul>  
+  <section>
+      <h2 style="color:#686F73;">About,<br> SAGARBARH BANDHAB SATYESWAR VIDYABHAWAN:</h2>
+      <h5 style="color:#2A6786;">SAGARBARH BANDHAB SATYESWAR VIDYABHAWAN was established in 1946 and it is managed by the Department of Education.<br> It is located in Rural area. It is located in PANSKURA -II block of PURBA MEDINIPUR district of West Bengal. <br>The school consists of Grades from 5 to 12. <br>The school is Co-educational and it doesn't have an attached pre-primary section. <br>The school is N/A in nature and is not using school building as a shift-school. Bengali is the medium of instructions in this school.<br> This school is approachable by all weather road. In this school academic session starts in April.</h5>
+  </section>
+    </body>
+</html>
